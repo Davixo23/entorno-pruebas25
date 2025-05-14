@@ -71,10 +71,8 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
+  config.vm.provision "shell", path: "../entorno de pruebas/script.sh"
   config.vm.provision "shell", inline: <<-SHELL
-      apt-get update
-      apt-get install -y apache2
-      sudo apt install nodejs
       sudo cp /vagrant/index.html /var/www/html
     SHELL
 end
